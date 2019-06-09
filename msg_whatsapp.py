@@ -11,9 +11,9 @@ client = Client(account_sid, auth_token)
 
 message = client.messages \
                 .create(
-                     body="Join Earth's mightiest heroes. Like Kevin Bacon.",
+                     body="I will be late",
                      from_='+16693337498',
-                     to='+919057529646'
+                     to='+919610476662'
                  )
 
 print(message.sid)
