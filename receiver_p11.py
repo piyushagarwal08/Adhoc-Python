@@ -17,9 +17,12 @@ while(True):
 	data=s.recvfrom(150)
 	print 'Server says: '+data[0]
 	text = raw_input('Client says: ')
-	s.sendto(text,data[1])
-	if len(data[0]) == 0:
-		s.sendto('',data[1])
-		break
+	if len(text) > 150:
+		print("Sorry, but message length exceeded")
+	else:
+		s.sendto(text,data[1])
+		if len(data[0]) == 0:
+			s.sendto('',data[1])
+			break
 
 s.close()

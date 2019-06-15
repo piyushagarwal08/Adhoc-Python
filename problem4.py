@@ -8,7 +8,6 @@ for i in list(user_name):
 		print('incorrect username')
 		flag = 1
 if flag == 0 :
-	os.system('sudo useradd '+ user_name)
-	os.system('sudo passwd '+user_name)
-	
+	os.system(f'sudo useradd -p $(openssl passwd -1 hello+{user_name}) '+ user_name)
 
+	
