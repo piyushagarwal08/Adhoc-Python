@@ -16,6 +16,9 @@ while(True):
 	else:
 		s.sendto(text,(re_ip,re_port))
 		data = s.recvfrom(100)
+		if len(data[0]) == 0:
+			s.sendto('',(re_ip,re_port))
+			break
 		print 'Client says: '+data[0]
 		re_ip,re_port = data[1]
 		if len(data[0]) == 0:

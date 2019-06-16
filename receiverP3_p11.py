@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import socket
-re_ip="127.0.0.1"
+re_ip="192.168.43.134"
 re_port=4484  # 0 - 1024 -- you can check free udp port : netstat -nulp
 
 # Creating UDP socket
