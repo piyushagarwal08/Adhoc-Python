@@ -2,7 +2,7 @@ import imaplib
 import email
 
 mail = imaplib.IMAP4_SSL('imap.gmail.com')
-mail.login('gmail-email','g-mail-pass')
+mail.login('hrssharma001@gmail.com','harshjatt12')
 mail.select('INBOX')
 result,data = mail.search(None,"ALL")
 id_list = data[0].split()
