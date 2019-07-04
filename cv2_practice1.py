@@ -8,11 +8,11 @@ image = cv2.imread('/home/pykid/Downloads/image3')   # loading image
 rows = int(input('Enter the row size you prefer: '))    # users preference of rows  
 columns = int(input('Enter the column size you prefer: '))  #users preference of columns
 
-x_ratio = image.shape[0]/rows  # calculates the fx value
+print(image.shape[0]/rows)  # calculates the fx value
 y_ratio = image.shape[1]/columns  # calculates the fy value
 
-output = cv2.resize(image,None,fx=x_ratio,fy=y_ratio,interpolation=cv2.INTER_AREA)
-cv2.imshow('window1',output)
-cv2.waitKey(1000)
+#output = cv2.resize(image,None,fx=x_ratio,fy=y_ratio,interpolation=cv2.INTER_AREA)
+#cv2.imshow('window1',output)
+#cv2.waitKey(5000)
 
-cv2.destroyWindow('window1')
+#cv2.destroyWindow('window1')
