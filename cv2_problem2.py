@@ -6,10 +6,6 @@ import numpy as np
 image = cv2.imread('/home/pykid/Desktop/test1.jpeg',1)
 imagex = cv2.imread('/home/pykid/Desktop/test2.jpeg')
 
-# merging the two images
-merging = np.concatenate((image,imagex),axis=1)
-cv2.imshow('merged image',merging)
-
 # printing the shape
 print(image.shape)
 
@@ -26,5 +22,10 @@ def printx(a,b):
 
 cv2.imshow('original image',image)
 cv2.setMouseCallback('original image',CallBackFunc)
+
+# Merging two images in a single window
+merged = cv2.add(image,imagex)
+cv2.imshow('merged',merged)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
