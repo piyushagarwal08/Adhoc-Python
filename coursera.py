@@ -25,7 +25,7 @@ def coursera():
     driver.find_element_by_xpath("/html/body/div[5]/div[2]/div/div/div[2]/div[2]/div/div/div/div").click()
 
     time.sleep(8) # waits for dialog box of extension
-    pg.click(1121,317)
+    driver.switch_to_alert().accept()
     time.sleep(10)
     # Add coursera cookie
     pg.click(1822,94)  # select cookie extension
