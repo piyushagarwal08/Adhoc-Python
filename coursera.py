@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait 
 from selenium.webdriver.support import expected_conditions as EC 
+from selenium.webdriver.chrome.options import Options 
 import time
 import pyautogui as pg
 
@@ -12,23 +13,24 @@ password = 'qwerty12345'
 course = 'Python for Everybody'
 cookie_file = open('cookies.txt')
 cookie = cookie_file.read()
-driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver")  # opens the chrome browser
+
+options = Options()
+options.add_extension("/usr/bin/extension_1_5_0_0.crx")
+driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver",options=options)  # opens the chrome browser
+#driver = webdriver.Chrome(options=options)
 def coursera():
     # opens google chrome
     #driver = webdriver.Chrome(executable_path="/usr/bin/chromedriver")  # opens the chrome browser
     driver.maximize_window()
     # a timer for all the commands to keep things smooth
     driver.implicitly_wait(10)
-
-    # Adds cookie extension for chromw
-    driver.get("https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg")
-    driver.find_element_by_xpath("/html/body/div[5]/div[2]/div/div/div[2]/div[2]/div/div/div/div").click()
-
-    time.sleep(8) # waits for dialog box of extension
-    driver.switch_to_alert().accept()
-    time.sleep(10)
+    # open coursera 
+    driver.get("https://www.coursera.org")  # opens the webpage
+    time.sleep(120)
+    
+    print("time to add cookie")
     # Add coursera cookie
-    pg.click(1822,94)  # select cookie extension
+    pg.click(1797,131)  # select cookie extension
     time.sleep(1)
     pg.click(1554,117) # select import cookie button
     time.sleep(1)
@@ -43,7 +45,7 @@ def coursera():
     driver.refresh()
 
     # open coursera 
-    driver.get("https://www.coursera.org")  # opens the webpage
+   # driver.get("https://www.coursera.org")  # opens the webpage
 
     print("Opened the Webpage:",driver.title,"with url: ",driver.current_url)
 
