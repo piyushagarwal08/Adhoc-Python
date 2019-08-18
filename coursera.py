@@ -45,7 +45,7 @@ def coursera():
     driver.refresh()
 
     # open coursera 
-   # driver.get("https://www.coursera.org")  # opens the webpage
+    # driver.get("https://www.coursera.org")  # opens the webpage
 
     print("Opened the Webpage:",driver.title,"with url: ",driver.current_url)
 
