@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import time
 import pyautogui as pg
+from selenium.webdriver.support.ui import Select
 
 
 email = 'piyushagarwal.0108@gmail.com'
@@ -56,19 +57,22 @@ def coursera():
     driver.find_element_by_id('finaid_button').click()  # click on financial update available
     time.sleep(1)
     driver.find_element_by_id('financial_aid_modal_apply_button').click()  # continue to financial aid
+    wait = WebDriverWait(driver,20)
+    time.sleep(8)
+    print('time to open actual application')
+    #pg.click(570,684)  # click on first check box
+    driver.find_element_by_id('info_checkbox').click()  # click on 1st checkbox
+    driver.find_element_by_id('completion_checkbox').click() # click on 2nd checkbox  
+    time.sleep(1)
+
+    driver.find_element_by_id('accept-terms-field').send_keys('I agree to the terms above') # enter agree terms in text field
+    time.sleep(1)
+
+    application_button = wait.until(EC.element_to_be_clickable((By.ID,'continue_finaid_application_button')))
+    application_button.click() # clicks on application continue button
+
 
 coursera()
 
-wait = WebDriverWait(driver,20)
-time.sleep(8)
-#pg.click(570,684)  # click on first check box
-driver.find_element_by_id('info_checkbox').click()  # click on 1st checkbox
-driver.find_element_by_id('completion_checkbox').click() # click on 2nd checkbox  
-time.sleep(1)
 
-driver.find_element_by_id('accept-terms-field').send_keys('I agree to the terms above') # enter agree terms in text field
-time.sleep(1)
-
-application_button = wait.until(EC.element_to_be_clickable((By.ID,'continue_finaid_application_button')))
-application_button.click() # clicks on application continue button
 
