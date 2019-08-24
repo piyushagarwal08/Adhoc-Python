@@ -1,7 +1,0 @@
-#!/usr/bin/python3
-
-text = input('Enter text: ')
-
-if len(text) > 500:
-	text = text[0:500]
-	

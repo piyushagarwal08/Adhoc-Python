@@ -1,0 +1,20 @@
+HEY THIS IS MY COURSERA FREE STUDY SOFTWARE
+
+Files required:
+* coursera.py
+* driver.sh
+* para1
+* para2
+
+FEW REQUIREMENTS TO USE IT ARE
+* PYTHON3.7
+* SELENIUM (pip3 install selenium)
+* download chromedriver (run the driver.sh file)
+* download pyautogui (pip3 install pyautogui)
+* you need to add an chrome extension (https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg)
+
+SMALL TASK
+* after completing the above requirements
+* open your coursera account
+* click on cookie icon after 
+* click on export option and paste the json text in a file named cookies.txt and save in same folder as coursera.py
