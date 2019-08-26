@@ -8,14 +8,13 @@ import pyautogui as pg
 from selenium.webdriver.support.ui import Select
 
 
-email = input('Please enter your email: ')
-password = input('Please enter your password: ')
+#email = input('Please enter your email: ')
+#password = input('Please enter your password: ')
 
-course = input('Please enter the exact name of the course for best results: ')   # pls enter your course name
+course = 'Object Oriented Programming in Java Specialization'   # pls enter your course name
 cookie_file = open('cookies.txt')  # account cookies should be saved with same name
 cookie = cookie_file.read()
 cookie_file.close()
-
 
 options = Options()
 options.add_extension("/usr/bin/extension_1_5_0_0.crx")
@@ -106,10 +105,9 @@ def coursera():
     driver.find_element_by_id('finaid-loanReason').send_keys('Currently i have no source of income')  # third paragraph filled
 
     print('Filled the finally form also successfully')
-
     # finally to submit application
     driver.find_element_by_id('submit_application_button').click()
-
+    time.sleep(8)
     driver.quit()
 
 coursera()
