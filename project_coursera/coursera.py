@@ -24,21 +24,22 @@ def coursera():
     driver.maximize_window()
     # a timer for all the commands to keep things smooth
     driver.implicitly_wait(10)
+    
     # open coursera 
     driver.get("https://www.coursera.org")  # opens the webpage
     time.sleep(3)
     
     print("time to add cookie")
     # Add coursera cookie
-    pg.click(1797,119)  # select cookie extension
+    pg.click(1819,94)  # select cookie extension
     time.sleep(1)
-    pg.click(1416,144) # select import cookie button
+    pg.click(1542,112) # select import cookie button
     time.sleep(1)
-    pg.click(1289,316) # click on text input field
+    pg.click(1441,283) # click on text input field
     time.sleep(1)
     pg.typewrite(cookie)  # enter coursera cookies
     time.sleep(1)
-    pg.click(1424,894)  # save the cookies
+    pg.click(1544,693)  # save the cookies
 
     time.sleep(3)
     # now refresh the page 
@@ -53,7 +54,7 @@ def coursera():
     course_field.send_keys(course) # types in the course
     time.sleep(3)
     print('time to select the course')
-    pg.click(629,335) # selects the course
+    pg.click(462,266) # selects the course
     driver.find_element_by_id('finaid_button').click()  # click on financial update available
     time.sleep(1)
     driver.find_element_by_id('financial_aid_modal_apply_button').click()  # continue to financial aid
