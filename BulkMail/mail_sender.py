@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import openpyxl
 
-sender_mail = 'pkpaptech@gmail.com'
+sender_mail = 'piyushmittal.agarwal2@gmail.com'
 #receiver_mail = ['piyushagarwal.0108@gmail.com','akshit.aashrawat@gmail.com']
 subject = "Introductory of Lab Equipments"
 #password = getpass()

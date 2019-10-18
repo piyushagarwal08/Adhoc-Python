@@ -13,6 +13,14 @@ conn=mysql.connect(user=username,password=password,database=database_name,host=h
 # Now generating a SQL language cursor 
 cur = conn.cursor()
 
+with open('file.txt','r') as file:
+    questions = file.readlines()
+    for i in questions:
+        question,option1,option2,option3,option4,answer = i.split('##')
+        cur.execute('Insert into Docker_B(Question,Option1,Option2,Option3,Option4,Answer) values(questiton,option1,option2,option3,option4,answer);')
+
+conn.close
+
 # Now we can write SQL query
 #cur.execute('show tables;')
 
