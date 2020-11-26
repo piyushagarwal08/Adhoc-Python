@@ -9,4 +9,4 @@ for i in range(6):
             print(end=" ")
     print()
 print(pyfiglet.figlet_format("YOU"))
-print(pyfiglet.figlet_format("Python"))
+print(pyfiglet.figlet_format("boni"))
